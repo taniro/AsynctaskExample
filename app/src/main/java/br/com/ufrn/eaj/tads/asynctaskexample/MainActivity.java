@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView img;
     private ProgressBar progresso;
     private Bitmap bitmap;
-    private static final String URL = "http://tads.eaj.ufrn.br/projects/tads.png";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         downloadImagem();
 
         //Exemplo de como usar um timer para colocar a AsyncTask em loop.
-        //NÃO RECOMENDADO -  Usar um serviço !
+        //NÃO RECOMENDADO -  O certo é usar um serviço !
         /*
         Timer myTimer = new Timer();
         myTimer.schedule(new TimerTask() {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void downloadImagem(){
         BaixarArquivosTask tarefa = new BaixarArquivosTask();
-        tarefa.execute(URL);
+        tarefa.execute("http://tads.eaj.ufrn.br/projects/tads.png");
     }
 
     /*
